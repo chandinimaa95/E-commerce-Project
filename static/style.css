@@ -82,9 +82,7 @@ button:hover{
     border: none;
     border-radius: 5px;
 }
-.cart-page{
-    border: 1px;
-}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     nav {
