@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+}
+
+/* Navbar */
+nav {
+    background-color: #6f95fd;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background-color:gold;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+nav a:hover{
+    transform: scale(1.08);
+}
+
+/* Product Cards */
+.products {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+button {
+    background-color: gold;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+button:hover{
+    transform: scale(1.08);
+}
+
+.search-form {
+    margin-left: auto;
+    background-color: white;
+}
+.search-form input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+.search-form button{
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.cart-page{
+    border: 1px;
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .products {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}

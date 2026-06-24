@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon</title>
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <h1>Amazon</h1>
+        <a href="/">Home</a>
+        <a href="/cart/">Cart</a>
+        <a href="/login">Login</a>
+        <form method="GET" action="/" class="search-form">
+        <input type="text" name="q" placeholder="Search Products">
+        <button type="submit" style="padding: 15px;">Enter</button>
+    </form>
+    </nav>
+<div class="products">
+{% for product in products %}
+
+<div style=" padding:20px; margin:30px; border-radius: 10px; box-shadow: 0px 2px gray; border-width: 2px;" class="product">
+
+    <img src="{{ product.image }}" width="200">
+
+    <h2>{{ product.name }}</h2>
+
+    <p>{{ product.description }}</p>
+
+    <h3>₹{{ product.price }}</h3>
+
+    <a href="/product/{{product.id}}/"><button>View Details</button></a>
+
+</div>
+
+{% endfor %}
+</div>
+</body>
+</html>

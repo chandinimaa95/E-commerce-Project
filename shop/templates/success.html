@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    
+</head>
+<body>
+    <nav>
+        <h1>Amazon</h1>
+        <a href="/">Home</a>
+        <a href="/cart/">Cart</a>
+        <a href="/login">Login</a>
+    </nav>
+    <div>
+    <h1>Order Placed Successfully</h1>
+    <img src="{{ product.image }}" width="200">
+
+    <h2>{{ product.name }}</h2>
+    <p>₹{{ product.price }}</p>
+    </div>
+    <h2>Total Amount: {{total}}</h2>
+    <a href="/"><button>Back to Home</button></a>
+</body>
+</html>

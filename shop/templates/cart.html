@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <style>
+        div{
+            border-radius: 10px;
+             padding: 30px;
+             border-width: 2px;
+             width: 280px;
+             background-color: white;
+             text-align: center;
+             box-shadow: 0px 2px 10px gray;
+
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Amazon</h1>
+        <a href="/">Home</a>
+        <a href="/cart/">Cart</a>
+        <a href="/login">Login</a>
+    </nav>
+
+<h1>Shopping Cart</h1>
+
+{% for product in products %}
+<div class="cart-page">
+    <img src="{{ product.image }}" width="200">
+
+    <h2>{{ product.name }}</h2>
+    <p>₹{{ product.price }}</p>
+    <a href="/checkout/{{product.id}}"><button>Place Order</button></a>
+    <a href="/remove-from-cart/{{product.id}}/"><button>Remove</button></a>
+    </div>
+    
+{% empty %}
+    <p>No products in cart.</p>
+{% endfor %}
+
+<a href="/"><button>Continue Shopping</button></a>
+
+
+</body>
+</html>
